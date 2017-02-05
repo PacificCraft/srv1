@@ -54,7 +54,7 @@ public class Srv1UserDetailsService implements UserDetailsService {
     		throw new UsernameNotFoundException(String.format("Role not assigned to user %s", user.getUserId()));
     	}
 		logger.info("User {} assigned the following authorities: '{}'", username, authorities);
-        UserDetails userDetails = new User(username, username, true, true, true, !user.isBlocked(), authorities);
+        UserDetails userDetails = new User(username, user.getPasswordHash(), true, true, true, !user.isBlocked(), authorities);
 		return userDetails;
 	}
 }

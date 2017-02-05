@@ -7,6 +7,6 @@ import uk.me.vucko.stefan.srv1.cassdb.tables.User;
 
 public interface UserRepo extends CrudRepository<User, String> {
 
-	@Query("select * from ips_server.User where userId=?0")
+	@Query("select * from stefan_srv1.User where userId=?0")
     public User fetchByUserId(String userId);
 }

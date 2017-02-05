@@ -46,7 +46,7 @@ public class UserAPIController {
     	User user = dbContext.getUserRepo().fetchByUserId(username);
     	if (user == null) {
 			logger.warn("No user configured with username: '{}'", username);
-    		throw new AuthenticationException("User hasn't been configured for this certificate");	    		
+    		throw new AuthenticationException("No user with that username");	    		
     	}
     	if (user.isBlocked()) {
 			logger.warn("User with UUID '{}' has been blocked", username);

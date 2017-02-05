@@ -9,7 +9,7 @@ import uk.me.vucko.stefan.srv1.cassdb.tables.Role;
 
 public interface RoleRepo extends CrudRepository<Role, UUID> {
 
-	@Query("select * from ips_server.Role where roleId=?0")
+	@Query("select * from stefan_srv1.Role where roleId=?0")
     public Role fetchByRoleId(UUID roleId);
 
 }
